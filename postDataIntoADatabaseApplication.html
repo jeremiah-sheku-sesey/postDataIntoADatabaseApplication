@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REST APIs</title>
+</head>
+<body>
+    <h1 class="api">Posting data into a database</h1>
+
+     <form id="form" method="post">
+        <input type="text", id="name" placeholder="Name"/></br>
+        <input type="text", id="body" placeholder="Body"/></br>
+        <input type="submit" id="add" value="Add"/>
+     </form> 
+     <div>
+     <h3 class="success"> </h3>
+     <h4 id="title"></h4>
+     <h5 id="bd"></h5>
+     </div>
+
+
+     <!-- script is written below -->
+
+     <script>
+        let name = document.getElementById('name');
+        let body = document.getElementById('body');
+        let title = document.getElementById('title');
+        let bd = document.getElementById('bd');
+        let success = document.querySelector('.success');
+
+        let add = document.getElementById('add');
+        
+        form.addEventListener('submit',(e)=> {
+    // prevent the form from submitting
+    e.preventDefault();
+            
+        bd.innerHTML=body.value;
+        title.innerHTML=name.value;
+        success.textContent='The Following data is successfuly posted';
+});
+     </script>
+
+</body>
+</html>
